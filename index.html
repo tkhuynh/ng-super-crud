@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="superCrudApp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="/">
+	<!-- bootstrap css -->
+	<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- custom styles -->
+	<link type="text/css" rel="stylesheet" href="style.css">
+
+	<!-- angular -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+	
+	<!-- angular ng-resource -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.min.js"></script>
+
+	<!-- angular route -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+
+	<!-- custom script -->	
+	<script type="text/javascript" src="app.js"></script>
+
+	<title>Ng-Super CRUD</title>
+</head>
+<body>
+	<div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div ng-view></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
