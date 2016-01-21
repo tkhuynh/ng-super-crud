@@ -20,6 +20,8 @@
 		<input type="submit" class="btn btn-primary form-control" value="Add">
 	</div>
 </form>
+<hr>
+<h4 class="text-center">{{loading ? "Loading..." : ""}}</h4>
 <div class="row" ng-repeat="book in books" style="margin-bottom: 10px">
 	<div class="col-xs-4">
 		<img src="{{book.image}}" class="img-responsive" style="width: 200px">

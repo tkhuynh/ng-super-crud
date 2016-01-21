@@ -25,7 +25,10 @@ app.factory("Book", ["$resource", function($resource) {
   });
 }]);
 app.controller('BooksIndexCtrl', ['$scope', 'Book', function($scope, Book) {
-	$scope.books = Book.query();
+	$scope.loading = true;
+	$scope.books = Book.query(function() {
+		$scope.loading = false;
+	});
 	$scope.addBook = function() {
 		if (!$scope.newBook.image) {
 			$scope.newBook.image = "http://gujaratprachar.com/img/placeholder_noImage_bw.png";
@@ -52,10 +55,7 @@ app.controller('BooksShowCtrl', ['$scope', '$routeParams', '$location', 'Book', 
 		});
 	};
 	$scope.editBook = function() {
-		if (!$scope.editedBook.image) {
-			$scope.editedBook.image = "http://gujaratprachar.com/img/placeholder_noImage_bw.png";
-		}
-		Book.update({id: bookId}, $scope.editedBook, function(data) {
+		Book.update({id: bookId}, $scope.book, function(data) {
 			$location.path("/");
 		});
 	};
